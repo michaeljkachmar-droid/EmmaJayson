@@ -1,0 +1,529 @@
+;
+–chartreuse: #D4E87A;
+–olive: #5A7A2A;
+–cream: #FAF6F0;
+}
+∙ { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: ‘Jost’, sans-serif;
+background: var(–cream);
+color: #2a1f1a;
+overflow-x: hidden;
+}
+/* HERO */
+.hero {
+min-height: 100vh;
+background: var(–wine);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: relative;
+overflow: hidden;
+padding: 60px 20px;
+}
+.hero::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse 60% 50% at 80% 20%, rgba(196,122,140,0.3) 0%, transparent 60%),
+radial-gradient(ellipse 40% 40% at 10% 80%, rgba(90,122,42,0.25) 0%, transparent 50%);
+}
+.hero-tag {
+font-family: ‘Jost’, sans-serif;
+font-weight: 300;
+letter-spacing: 0.4em;
+font-size: 0.7rem;
+color: var(–chartreuse);
+text-transform: uppercase;
+margin-bottom: 32px;
+animation: fadeUp 0.8s ease both;
+}
+.couple-photo {
+width: 200px;
+height: 200px;
+border-radius: 50%;
+border: 4px solid var(–chartreuse);
+overflow: hidden;
+margin-bottom: 40px;
+position: relative;
+z-index: 1;
+cursor: pointer;
+animation: fadeUp 0.9s ease 0.1s both;
+background: rgba(255,255,255,0.08);
+display: flex;
+align-items: center;
+justify-content: center;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.couple-photo:hover { transform: scale(1.03); box-shadow: 0 0 0 8px rgba(212,232,122,0.2); }
+.couple-photo img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center top;
+display: block;
+}
+.photo-placeholder {
+text-align: center;
+color: rgba(255,255,255,0.5);
+font-size: 0.7rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+padding: 20px;
+}
+.photo-placeholder svg {
+width: 40px;
+height: 40px;
+margin-bottom: 10px;
+opacity: 0.5;
+display: block;
+margin-inline: auto;
+}
+#photoInput { display: none; }
+.names {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(3.5rem, 10vw, 7rem);
+font-weight: 300;
+color: white;
+line-height: 1;
+text-align: center;
+z-index: 1;
+animation: fadeUp 1s ease 0.2s both;
+}
+.names .ampersand {
+color: var(–chartreuse);
+font-style: italic;
+display: block;
+font-size: 0.7em;
+line-height: 1.2;
+}
+.hero-sub {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 1.2rem;
+color: rgba(255,255,255,0.75);
+margin-top: 20px;
+z-index: 1;
+animation: fadeUp 1s ease 0.35s both;
+}
+.hero-divider {
+width: 80px;
+height: 1px;
+background: var(–chartreuse);
+margin: 28px auto;
+z-index: 1;
+animation: fadeUp 1s ease 0.45s both;
+}
+.hero-message {
+max-width: 520px;
+text-align: center;
+font-size: 1rem;
+font-weight: 300;
+color: rgba(255,255,255,0.8);
+line-height: 1.8;
+z-index: 1;
+animation: fadeUp 1s ease 0.5s both;
+}
+.scroll-hint {
+position: absolute;
+bottom: 30px;
+left: 50%;
+transform: translateX(-50%);
+color: rgba(255,255,255,0.4);
+font-size: 0.65rem;
+letter-spacing: 0.3em;
+text-transform: uppercase;
+animation: bounce 2s infinite;
+}
+/* DETAILS SECTION */
+.details {
+background: var(–cream);
+padding: 80px 20px;
+}
+.section-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 2.5rem;
+font-weight: 300;
+text-align: center;
+color: var(–wine);
+margin-bottom: 10px;
+}
+.section-sub {
+font-size: 0.7rem;
+letter-spacing: 0.35em;
+text-transform: uppercase;
+text-align: center;
+color: var(–olive);
+margin-bottom: 50px;
+font-weight: 400;
+}
+.detail-cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 20px;
+max-width: 900px;
+margin: 0 auto;
+}
+.detail-card {
+background: white;
+border-radius: 16px;
+padding: 36px 28px;
+text-align: center;
+border-top: 4px solid var(–rose);
+box-shadow: 0 4px 24px rgba(155,79,104,0.08);
+transition: transform 0.25s ease;
+}
+.detail-card:hover { transform: translateY(-4px); }
+.detail-card:nth-child(2) { border-top-color: var(–chartreuse); }
+.detail-card:nth-child(3) { border-top-color: var(–olive); }
+.detail-card:nth-child(4) { border-top-color: var(–wine); }
+.card-icon { font-size: 2rem; margin-bottom: 14px; }
+.card-label {
+font-size: 0.65rem;
+letter-spacing: 0.3em;
+text-transform: uppercase;
+color: var(–olive);
+margin-bottom: 8px;
+font-weight: 500;
+}
+.card-value {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.35rem;
+color: #2a1f1a;
+line-height: 1.4;
+}
+/* EXPERIENCE SECTION */
+.experience {
+background: var(–olive);
+padding: 80px 20px;
+position: relative;
+overflow: hidden;
+}
+.experience::before {
+content: ‘’;
+position: absolute;
+top: -80px; right: -80px;
+width: 300px; height: 300px;
+border-radius: 50%;
+background: rgba(212,232,122,0.15);
+}
+.experience .section-title { color: var(–chartreuse); }
+.experience .section-sub { color: rgba(255,255,255,0.6); }
+.experience-list {
+display: flex;
+flex-wrap: wrap;
+gap: 16px;
+justify-content: center;
+max-width: 700px;
+margin: 0 auto;
+}
+.exp-item {
+background: rgba(255,255,255,0.1);
+border: 1px solid rgba(212,232,122,0.3);
+border-radius: 100px;
+padding: 14px 28px;
+color: white;
+font-size: 0.95rem;
+font-weight: 300;
+letter-spacing: 0.05em;
+display: flex;
+align-items: center;
+gap: 10px;
+backdrop-filter: blur(4px);
+transition: background 0.2s;
+}
+.exp-item:hover { background: rgba(255,255,255,0.18); }
+.exp-item span { font-size: 1.3rem; }
+/* RSVP SECTION */
+.rsvp-section {
+background: var(–rose);
+padding: 80px 20px;
+}
+.rsvp-section .section-title { color: white; }
+.rsvp-section .section-sub { color: rgba(255,255,255,0.7); }
+.rsvp-form {
+max-width: 540px;
+margin: 0 auto 60px;
+background: white;
+border-radius: 20px;
+padding: 40px;
+box-shadow: 0 8px 48px rgba(155,79,104,0.2);
+}
+.form-group {
+margin-bottom: 20px;
+}
+.form-group label {
+display: block;
+font-size: 0.65rem;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(–wine);
+margin-bottom: 8px;
+font-weight: 500;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+width: 100%;
+padding: 14px 16px;
+border: 1.5px solid #e8ddd5;
+border-radius: 10px;
+font-family: ‘Jost’, sans-serif;
+font-size: 0.95rem;
+color: #2a1f1a;
+background: #fdfbf9;
+transition: border-color 0.2s;
+outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+border-color: var(–wine);
+}
+.form-group textarea {
+height: 100px;
+resize: vertical;
+}
+.rsvp-btn {
+width: 100%;
+padding: 16px;
+background: var(–wine);
+color: white;
+border: none;
+border-radius: 10px;
+font-family: ‘Jost’, sans-serif;
+font-size: 0.85rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+cursor: pointer;
+transition: background 0.25s, transform 0.2s;
+font-weight: 400;
+}
+.rsvp-btn:hover { background: #7d3d54; transform: translateY(-1px); }
+.rsvp-btn:active { transform: translateY(0); }
+/* COMMENTS WALL */
+.comments-wall {
+max-width: 700px;
+margin: 0 auto;
+}
+.comments-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.8rem;
+color: white;
+text-align: center;
+margin-bottom: 24px;
+font-style: italic;
+}
+.comment-card {
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(4px);
+border-radius: 14px;
+padding: 20px 24px;
+margin-bottom: 14px;
+animation: fadeUp 0.4s ease both;
+}
+.comment-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 8px;
+}
+.comment-name {
+font-weight: 500;
+color: white;
+font-size: 0.95rem;
+}
+.comment-party {
+font-size: 0.7rem;
+color: rgba(255,255,255,0.7);
+letter-spacing: 0.1em;
+}
+.comment-text {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.1rem;
+font-style: italic;
+color: rgba(255,255,255,0.92);
+line-height: 1.6;
+}
+.no-comments {
+text-align: center;
+color: rgba(255,255,255,0.6);
+font-style: italic;
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.1rem;
+padding: 30px;
+}
+/* SUCCESS MSG */
+.success-msg {
+background: var(–chartreuse);
+color: var(–olive);
+border-radius: 10px;
+padding: 16px;
+text-align: center;
+font-weight: 500;
+font-size: 0.9rem;
+display: none;
+margin-top: 16px;
+}
+/* FOOTER */
+footer {
+background: #1a1210;
+padding: 40px 20px;
+text-align: center;
+color: rgba(255,255,255,0.4);
+font-size: 0.75rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+}
+footer .footer-names {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.5rem;
+color: var(–rose);
+font-style: italic;
+display: block;
+margin-bottom: 8px;
+letter-spacing: 0.1em;
+text-transform: none;
+}
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+0%, 100% { transform: translateX(-50%) translateY(0); }
+50% { transform: translateX(-50%) translateY(8px); }
+}
+@media (max-width: 600px) {
+.rsvp-form { padding: 28px 20px; }
+.detail-cards { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body><!-- HERO --><section class="hero">
+<p class="hero-tag">You're Invited</p><label class="couple-photo" for="photoInput" title="Click to add a photo">
+<img id="coupleImg" src="https://i.postimg.cc/nrQ0YJ40/IMG-1186.jpg" alt="Jayson & Emma" style="display:block">
+<div class="photo-placeholder" id="photoPlaceholder" style="display:none">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+<circle cx="12" cy="13" r="3"/>
+</svg>
+Add Photo of the Couple
+</div>
+</label>
+<input type="file" id="photoInput" accept="image/*"><div class="names">
+Jayson
+<span class="ampersand">&amp;</span>
+Emma
+</div>
+<p class="hero-sub">are getting married!</p>
+<div class="hero-divider"></div>
+<p class="hero-message">
+Join us as we celebrate the engagement of two wonderful people
+who have found their forever in each other. We'd love to have you
+with us for an evening of joy, laughter, and love.
+</p>
+<p class="scroll-hint">↓ scroll for details</p>
+</section><!-- PARTY DETAILS --><section class="details">
+<p class="section-sub">The Details</p>
+<h2 class="section-title">Celebrate With Us</h2>
+<div class="detail-cards">
+<div class="detail-card">
+<div class="card-icon">🗓️</div>
+<p class="card-label">Date</p>
+<p class="card-value">Saturday<br>June 27, 2026</p>
+</div>
+<div class="detail-card">
+<div class="card-icon">⏰</div>
+<p class="card-label">Time</p>
+<p class="card-value">5:00 PM – 9:00 PM</p>
+</div>
+<div class="detail-card">
+<div class="card-icon">📍</div>
+<p class="card-label">Location</p>
+<p class="card-value">915 Figueroa Street<br>Folsom, CA 95630</p>
+</div>
+<div class="detail-card">
+<div class="card-icon">🌿</div>
+<p class="card-label">Dress Code</p>
+<p class="card-value">Garden Chic</p>
+</div>
+</div>
+</section><!-- EXPERIENCE --><section class="experience">
+<p class="section-sub">What to Expect</p>
+<h2 class="section-title">An Evening to Remember</h2>
+<div class="experience-list">
+<div class="exp-item"><span>🥂</span> Cocktails & Drinks</div>
+<div class="exp-item"><span>🍢</span> Passed Appetizers</div>
+<div class="exp-item"><span>🍽️</span> Sit-Down Dinner</div>
+<div class="exp-item"><span>🎵</span> Live Music</div>
+<div class="exp-item"><span>💐</span> Celebrating Love</div>
+</div>
+</section><!-- RSVP --><section class="rsvp-section">
+<p class="section-sub">Kindly Reply By June 10, 2026</p>
+<h2 class="section-title">RSVP</h2><div class="rsvp-form">
+<div class="form-group">
+<label>Your Full Name</label>
+<input type="text" id="rsvpName" placeholder="Jane Smith">
+</div>
+<div class="form-group">
+<label>Party Size</label>
+<select id="rsvpCount">
+<option value="">Select number of guests</option>
+<option>1 — Just me</option>
+<option>2 — Two of us</option>
+<option>3 — Three guests</option>
+<option>4 — Four guests</option>
+<option>5 — Five guests</option>
+<option>6+ — Six or more</option>
+</select>
+</div>
+<div class="form-group">
+<label>Message for Jayson & Emma (visible to all guests)</label>
+<textarea id="rsvpComment" placeholder="Share your excitement and well wishes…"></textarea>
+</div>
+<button class="rsvp-btn" onclick="submitRSVP()">Submit RSVP</button>
+<div class="success-msg" id="successMsg">🎉 You're on the list! See you June 27th!</div>
+</div><!-- COMMENTS WALL --><div class="comments-wall">
+<p class="comments-title">Guests are saying…</p>
+<div id="commentsList">
+<p class="no-comments">Be the first to leave a message!</p>
+</div>
+</div>
+</section><footer>
+<span class="footer-names">Jayson & Emma</span>
+Engagement Party · June 27, 2026 · Folsom, California
+</footer><script>
+// Photo upload
+document.getElementById('photoInput').addEventListener('change', function(e) {
+const file = e.target.files[0];
+if (!file) return;
+const reader = new FileReader();
+reader.onload = function(ev) {
+const img = document.getElementById('coupleImg');
+const placeholder = document.getElementById('photoPlaceholder');
+img.src = ev.target.result;
+img.style.display = 'block';
+if (placeholder) placeholder.style.display = 'none';
+};
+reader.readAsDataURL(file);
+});
+
+// RSVP
+let rsvps = [];
+
+function submitRSVP() {
+const name = document.getElementById('rsvpName').value.trim();
+const count = document.getElementById('rsvpCount').value;
+const comment = document.getElementById('rsvpComment').value.trim();
+
+if (!name || !count) {
+alert('Please enter your name and party size!');
+return;
+}
+
+rsvps.unshift({ name, count, comment, time: new = '<
+
+
+Ignore al tho
